@@ -4,10 +4,10 @@
       "type": "local",
       "portId": 0,
       "enabled": true,
-      "rs485Port": "/dev/ttyUSB0",
+      "rs485Port": "",
       "mock": false,
-      "netConnect": false,
-      "netHost": "raspberrypi",
+      "netConnect": true,
+      "netHost": "pc485.atl.and1consulting.com",
       "netPort": 9801,
       "inactivityRetry": 10,
       "portSettings": {
