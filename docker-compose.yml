@@ -1,0 +1,24 @@
+services:
+  poolcontroller:
+    container_name: pcv804
+    restart: always
+    ports:
+      - "4200:4200"
+    volumes:
+      - /data/poolcontroller/data:/app/data
+      - type: bind
+        source: /data/poolcontroller/config.json
+        target: /app/config.json
+    image: msmi/nodejs-poolcontroller
+  poolcontroller-dashpanel:
+    restart: always
+    container_name: dpv804
+    ports:
+      - "5150:5150"
+    volumes:
+      - type: bind
+        source: /data/poolcontroller-dashpanel/config.json
+        target: /app/config.json
+    image: msmi/nodejs-poolcontroller-dashpanel
+    depends_on:
+      - poolcontroller
